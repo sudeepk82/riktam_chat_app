@@ -1,4 +1,3 @@
-import axios from "axios";
 import { Component } from "react";
 
 export default class LoginPage extends Component {

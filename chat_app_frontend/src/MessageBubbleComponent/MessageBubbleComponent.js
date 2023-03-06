@@ -1,7 +1,6 @@
 import { Component } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro'
-import axios from "axios";
+import { solid, regular } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 export default class MessageBubbleComponent extends Component {
     constructor(props) {
