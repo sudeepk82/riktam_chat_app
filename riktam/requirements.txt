@@ -11,7 +11,8 @@ djongo
 sqlparse
 dataclasses==0.6
 six==1.16.0
-channels["daphne"]==4.0.0
+# channels["daphne"]==4.0.0
+daphn==4.0.0
 python-dotenv==1.0.0
 psycopg2-binary==2.9.5
 dj-database-url==1.2.0
