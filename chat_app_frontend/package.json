@@ -2,7 +2,6 @@
   "name": "chat_app_frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://192.168.1.9:8000",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
     "@fortawesome/free-regular-svg-icons": "^6.3.0",
