@@ -16,10 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from riktam import chat_app
+from chat_app import views
 
 urlpatterns = [
-    path("", chat_app.views.index, name="index"),
+    path("", views.index, name="index"),
     path("", include("chat_app.urls")),
     path("admin/", admin.site.urls),
     # path("api-auth/", include("rest_framework.urls")),
