@@ -1,0 +1,14 @@
+asgiref==3.6.0 
+backports.zoneinfo==0.2.1 
+django==4.1.6 
+djangorestframework==3.14.0 
+pytz==2022.7.1
+dnspython==2.3.0 
+pymongo==3.13.0
+# djongo==1.2.31
+# sqlparse==0.2.4
+djongo
+sqlparse
+dataclasses==0.6
+six==1.16.0
+channels["daphne"]==4.0.0
