@@ -1,4 +1,12 @@
 from channels.routing import ProtocolTypeRouter, URLRouter
+import os
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "riktam.settings")
+
+import django
+
+django.setup()
+
 
 # import app.routing
 from django.core.asgi import get_asgi_application
