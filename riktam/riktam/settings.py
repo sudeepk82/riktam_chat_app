@@ -11,21 +11,33 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_doatenv
+import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+load_doatenv(BASE_DIR / ".env")
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-!+0e#_jd*e+1kd&kcb#4@7fc3imgbnchp1(e2k$*e#ngshpnuu"
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "0").lower() in ["true", "t", "1"]
 
-ALLOWED_HOSTS = ["172.20.67.25", "localhost", "192.168.29.2", "192.168.1.9"]
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS").split(" ")
+
+# SECURITY WARNING: keep the secret key used in production secret!
+# SECRET_KEY = "django-insecure-!+0e#_jd*e+1kd&kcb#4@7fc3imgbnchp1(e2k$*e#ngshpnuu"
+
+# # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = True
+
+# ALLOWED_HOSTS = ["172.20.67.25", "localhost", "192.168.29.2", "192.168.1.9"]
 
 
 # Application definition
@@ -78,10 +90,11 @@ WSGI_APPLICATION = "riktam.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    },
+    "default": dj_database_url.parse(os.environ.get("DATABASE_URL"), conn_max_age=600),
+    # "default": {
+    #     "ENGINE": "django.db.backends.sqlite3",
+    #     "NAME": BASE_DIR / "db.sqlite3",
+    # },
     # "default": {
     #     "ENGINE": "django.db.backends.djongo",
     #     "NAME": "chat_db",
