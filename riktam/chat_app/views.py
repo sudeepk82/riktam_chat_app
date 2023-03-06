@@ -25,7 +25,7 @@ import json
 
 
 def index(request):
-    return HttpResponse("Chat App index working.")
+    return render(request, "index.html")
 
 
 class ReadOnly(BasePermission):
