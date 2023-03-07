@@ -45,7 +45,7 @@ class ChatWindow extends Component {
     }
 
     setupSocketAndFetchMessages = () => {
-        this.chatroomClient = new w3cwebsocket("ws://" + process.env.SITE_HOST + "/ws/" + this.props.group.id + "/")
+        this.chatroomClient = new w3cwebsocket("ws://" + process.env.REACT_APP_SITE_HOST + "/ws/" + this.props.group.id + "/")
         this.chatroomClient.onopen = () => {
             console.log("Connection opened to chat client for group", this.props.group.id);
         };

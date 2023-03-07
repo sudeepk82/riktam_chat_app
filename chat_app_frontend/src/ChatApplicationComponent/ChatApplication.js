@@ -17,8 +17,7 @@ class ChatApplication extends Component {
             chatClient: undefined,
             chatGroup: undefined,
         }
-
-        this.client = new w3cwebsocket('ws://' + process.env.SITE_HOST + '/ws/chat_app_groups/');
+        this.client = new w3cwebsocket('ws://' + process.env.REACT_APP_SITE_HOST + '/ws/chat_app_groups/');
     }
 
     componentDidMount() {
